@@ -1,5 +1,8 @@
 class ArtistsController < ApplicationController
   
+
+  # after_action :capitalize_name, only: [:new]
+
   def index
     @artists = Artist.all
   end
@@ -48,4 +51,8 @@ class ArtistsController < ApplicationController
     def artist_params
      params.require(:artist).permit(:name)
     end
+
+    # def capitalize_name
+    #   self.name.capitalize
+    # end
 end

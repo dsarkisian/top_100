@@ -1,2 +1,8 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+
+<h1><%=@artist.name=%>'s Songs:</h1>
+<ul>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.title, [@artist, song] %></li>
+  <% end %>
+</ul>
+<%= link_to 'Add a new song', new_artist_song_path(@artist) %>
