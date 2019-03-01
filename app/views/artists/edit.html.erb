@@ -1,2 +1,14 @@
-<h1>Artists#edit</h1>
-<p>Find me in app/views/artists/edit.html.erb</p>
+<h1>Edit <%= @artist.name %></h1>
+
+<hr />
+
+<p>Please, edit the name: </p>
+
+<%= form_for @artist do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<%end%>
+
+<%= link_to 'Back', :back %>
