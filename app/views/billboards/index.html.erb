@@ -1,2 +1,11 @@
-<h1>Billboards#index</h1>
-<p>Find me in app/views/billboards/index.html.erb</p>
+<h1>Billboards</h1>
+<hr>
+
+<ul>
+  <% @billboards.each do |board| %>
+    <li><h3><%= link_to board.name.capitalize, board %></h3></li>
+  <% end %>
+</ul>
+
+<hr>
+<h2><%= link_to 'Browse Artists', artists_path %> </h2>

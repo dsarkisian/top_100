@@ -2,22 +2,20 @@ class ArtistsController < ApplicationController
   
 
   # after_action :capitalize_name, only: [:new]
+  before_action :set_artist, only:[:edit, :show, :destroy, :update]
 
   def index
     @artists = Artist.all
   end
 
   def show
-    @artist = Artist.find(params[:id])
   end
 
   def edit
-    @artist = Artist.find(params[:id])
     #  render partial: 'artists/form'
   end
 
   def update
-    @artist = Artist.find(params[:id])
 
     if @artist.update(artist_params)
       redirect_to @artist
@@ -41,7 +39,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy 
-    Artist.find(params[:id]).destroy
+    @artist.destroy
     redirect_to artists_path
   end
 
@@ -52,7 +50,7 @@ class ArtistsController < ApplicationController
      params.require(:artist).permit(:name)
     end
 
-    # def capitalize_name
-    #   self.name.capitalize
-    # end
+    def set_artist
+      @artist = Artist.find(params[:id])
+    end
 end

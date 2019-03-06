@@ -1,8 +1,9 @@
 
-<h1><%=@artist.name=%>'s Songs:</h1>
-<ul>
+<h1><%=@artist.name.capitalize=%>'s Songs:</h1>
+<hr>
+<ol>
   <% @songs.each do |song| %>
-    <li><%= link_to song.title, [@artist, song] %></li>
+    <li><%= link_to song.title.capitalize, [@artist, song] %></li>
   <% end %>
-</ul>
+</ol>
 <%= link_to 'Add a new song', new_artist_song_path(@artist) %>

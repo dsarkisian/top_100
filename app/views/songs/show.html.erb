@@ -1,1 +1,6 @@
-<h1><%= @song.title %></h1>
+<h1><%= @song.title.capitalize %></h1>
+<hr>
+<br>
+
+<%= link_to 'Back', artist_songs_path(@artist) %>
+<%= link_to 'Delete song', [@artist, @song], method: :delete %>

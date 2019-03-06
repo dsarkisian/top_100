@@ -1,9 +1,10 @@
 <h1>All Artists</h1>
+<hr>
 
 <ol>
   <% @artists.each do |artist| %>
-    <li><%= link_to artist.name, artist %></li>
+    <li><%= link_to artist.name.capitalize, artist %></li>
   <% end %>
 </ol>
-
+<hr>
 <%= link_to 'Create new artist', new_artist_path %> 

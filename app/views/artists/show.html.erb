@@ -1,10 +1,11 @@
 
-<h1><%= @artist.name %></h1>
+<h1><%= @artist.name.capitalize %></h1>
 <hr />
 <p>What do you want to do?</p>
 
 <%= link_to 'Edit Artist', edit_artist_path(@artist) %>
 <%= link_to 'Delete Artist', @artist, method: :delete %>
-<%= link_to 'View Songs', artist_songs_path(@artist)%>
+<%= link_to 'Add a song', new_artist_song_path(@artist)%>
+<%= link_to 'View Songs', artist_songs_path(@artist) %>
 
 <%= link_to 'Back to All', artists_path %>
